@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Service 
+metadata:
+  name: at-dploy-svc-nlb-owasp-cheetsheets-nginx
+spec:
+  type: LoadBalancer # ClusterIp, # NodePort
+  selector:
+    app: atpod-owasp-cheetsheets-nginx
+  ports: 
+    - name: http
+      port: 80 # Service Port
+      targetPort: 80 # Container Port
+
+
+# # Usage - Create NLB Service
+# kubectl create -f k8s-deployment-svc-nlb.yaml
+# [or]
+# kubectl apply -f k8s-deployment-svc-nlb.yaml
+
+# # Usage - List NLB Service
+# kubectl get pods
