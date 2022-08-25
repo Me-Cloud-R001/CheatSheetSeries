@@ -1,0 +1,46 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: at-dploy-def-owasp-cheetsheets-nginx
+  labels:
+    app: atdeploy-owasp-cheetsheets-nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: atpod-owasp-cheetsheets-nginx
+  template: # pod definition
+    metadata:
+      name: at-pod-def-owasp-cheetsheets-nginx
+      labels:
+        app: atpod-owasp-cheetsheets-nginx
+    spec:
+      containers:
+        - name: atcont-owasp-cheetsheets-nginx
+          image: amtayaji/owasp-cheetsheets-nginx:latest
+          ports:
+            - containerPort: 80
+          # env:
+          #   - name: OWASP_CHEETSHEETS_NGINX_PORT
+          #     value: "8081"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST
+          #     value: "http://at-pods-lb-owasp-cheetsheets-nginx.at-deployment-owasp-cheetsheets-nginx.svc.cluster.local"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST_PORT
+          #     value: "http://at-pods-lb-owasp-cheetsheets-nginx.at-deployment-owasp-cheetsheets-nginx.svc.cluster.local:8081"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST_PORT_SSL
+          #     value: "https://at-pods-lb-owasp-cheetsheets-nginx.at-deployment-owasp-cheetsheets-nginx.svc.cluster.local:8081"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST_PORT_SSL_CERT
+          #     value: "/etc/ssl/certs/owasp-cheetsheets-nginx.crt"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST_PORT_SSL_KEY
+          #     value: "/etc/ssl/private/owasp-cheetsheets-nginx.key"
+          #   - name: OWASP_CHEETSHEETS_NGINX_HOST_PORT_SSL_CA
+          #     value: "/etc/ssl/certs/owasp-cheetsheets-nginx-ca.crt"
+            
+    
+# # Usage - Create Deployment
+# kubectl create -f k8s-deployment-def.yaml
+# [or]
+# kubectl apply -f k8s-deployment-def.yaml
+
+# # Usage - List Deployment
+# kubectl get pods

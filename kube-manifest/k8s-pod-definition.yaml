@@ -1,0 +1,20 @@
+apiVersion: v1 # String
+kind: Pod # String
+metadata: # Dictionary
+  name: at-pod-owasp-cheetsheets-nginx # String
+  labels: # Dictionary
+    app: atapp-owasp-cheetsheets-nginx  # Key value pairs
+spec:
+  containers: # List
+    - name: atcont-owasp-cheetsheets-nginx
+      image: amtayaji/owasp-cheetsheets-nginx:latest
+      ports: 
+        - containerPort: 80
+
+# # Usage - Create Pod
+# kubectl create -f 02-pod-definition.yml
+# [or]
+# kubectl apply -f 02-pod-definition.yml
+
+# # Usage - List Pods
+# kubectl get pods
