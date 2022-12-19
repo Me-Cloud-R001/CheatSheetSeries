@@ -1,10 +1,15 @@
-FROM nginx:latest
+FROM bitnami/nginx:latest
 
 LABEL   author="Amit Tyagi" \
         description="Dockerized OWASP Cheat-Sheets set, for portable quick reference, in teams development environments."
         
 ENV WORKING_DIRECTORY=generated/site
-COPY . /usr/share/nginx/html
+COPY . /app
 
-# docker build --tag amtayaji/owasp-cheetsheets-nginx:0.0.1 --file dockerfile generated/site
-# docker run --name owasp-cheetsheets-nginx-001 -d -p 8420:80 amtayaji/owasp-cheetsheets-nginx:latest
+# docker build --tag amtayaji/owasp-cheetsheets-bitnami-nginx:0.0.2 --file dockerfile generated/site
+# docker push amtayaji/owasp-cheetsheets-bitnami-nginx:0.0.2
+# docker run --name owasp-cheetsheets-bitnami-nginx-001 -d -p 8080:80 amtayaji/owasp-cheetsheets-bitnami-nginx:latest
+
+
+# docker tag local-image:tagname new-repo:tagname
+# docker push new-repo:tagname
