@@ -1,0 +1,69 @@
+    2  gcloud --help | less
+    9  helm version
+   10  su amtyagi
+   11  helm repo list
+   14  git clone https://github.com/Me-Cloud-R001/CheatSheetSeries.git
+   18  python3 --version
+   19  python --version
+   24  python -m pip3 install -r requirements.txt
+   26  pip3 install -r requirements.txt
+   27  python -m pip install -r requirements.txt
+
+   37  git switch at-integration-0001-dockerization
+
+   43  cd scripts && bash Generate_Site_mkDocs.sh
+   44  exit
+   45  docker run hello-world
+   46  exit
+   47  docker build --tag amtayaji/owasp-cheetsheets-nginx:0.0.2 --file dockerfile generated/site
+   50  docker run hello-world
+   51  docker ps -a
+   52  su amtyagi
+   53  chmod +777 /generated
+   54  chmod +777 generated
+   59  helm repo list
+   60  helm repo add at-bitnami https://charts.bitnami.com/bitnami
+   61  helm pull at-bitnami/nginx
+   62  tar -xvf nginx-13.2.18.tgz 
+
+   68  helm template at-cheatsheet-nginx nginx/ --output-dir generated/
+   70  kubectl get all
+   77  kubectl create -f generated/nginx/*
+   79  kubectl get service at-cheatsheet-nginx -o wide
+   81  kubectl delete -f generated/nginx/*
+   86  kubectl options
+   87  ls -latrin
+   88  tar -xvf nginx-13.2.18.tgz 
+   89  helm template nginx nginx/ --output-dir generated/
+   92  kubectl create -f generated/nginx/*
+   94  kubectl delete -f generated/nginx/*
+   95  kubectl get all
+   96  kubectl apply -f generated/nginx-cheatsheet/*
+   98  kubectl get pods -o wide
+  100  kubectl get container -o wide
+  102  kubectl get nodes -o wide
+  109  kubectl apply -f generated/nginx/*
+  110  kubectl delete -f generated/nginx/*
+  112  kubectl exec -ti pod/at-cheatsheet-nginx-9b67564c6-j5s5f bash
+  115  kubectl apply -f generated/nginx-cheatsheet/*
+  116  kubectl get Services -o wide
+  117  kubectl delete -f generated/nginx-cheatsheet/*
+  121  kubectl describe pod/at-cheatsheet-nginx-6b6bbf7fd-rzjjd
+  122  kubectl describe service/at-cheatsheet-nginx
+  123  kubectl delete -f generated/nginx-cheatsheet/*
+  124  kubectl get all
+  125  kubectl create -f generated/nginx-cheatsheet/*
+  127  kubectl describe service/at-cheatsheet-nginx
+  128  kubectl get Services -o wide
+  129  kubectl get Services -o wideclear
+  130  clear
+  131  kubectl apply -f generated/nginx-cheatsheet/*
+  132  kubectl delete -f generated/nginx-cheatsheet/*
+  133  exit
+  134  docker build --tag amtayaji/owasp-cheetsheets-bitnami-nginx:0.0.2 --file dockerfile generated/site
+  135  docker run --name owasp-cheetsheets-bitnami-nginx-001 -d -p 8080:80 amtayaji/owasp-cheetsheets-bitnami-nginx:latest
+  136  docker push amtayaji/owasp-cheetsheets-bitnami-nginx:0.0.2
+  137  docker login
+  138  docker push amtayaji/owasp-cheetsheets-bitnami-nginx:0.0.2
+  139  git status
+  141  history >> AT-RELATED-COMMANDS.txt
